@@ -1,0 +1,39 @@
+﻿@model IQueryable<News>
+@addTagHelper *, ReflectionIT.Mvc.Paging
+
+
+
+@{
+    ViewData["Title"] = "Simple News";
+}
+
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="row">
+                            <div>
+                                <div class="row h4 ml-1"><a asp-action="ViewNews" asp-controller="Main" asp-route-id="@item.Id">@item.Title</a></div>
+                                <div class="row m-1 h6">@item.Summary</div>
+                                <div class="row">
+                                    <div class="col">@item.Tags</div>
+                                    <div class="col text-right">@item.DatePublished</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="row mt-3 pl-3 pr-3">
+            <button type="button" class="btn btn-primary w-100" id="MoreNews">Больше новостей</button>
+        </div>
+    </div>

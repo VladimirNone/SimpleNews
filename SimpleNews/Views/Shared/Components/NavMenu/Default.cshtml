@@ -1,0 +1,21 @@
+﻿@model IEnumerable<string>
+
+
+<div class="col">
+    <div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <div class="lead">Категория</div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link lead" asp-route-tag="" asp-action="Index" asp-controller="Main">Все новости</a>
+            </li>
+            @foreach (var item in Model)
+            {
+                <li class="nav-item">
+                    <a class="nav-link lead" asp-route-tag="@item" asp-action="Index" asp-controller="Main">@item</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

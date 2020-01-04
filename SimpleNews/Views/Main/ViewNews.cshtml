@@ -1,0 +1,12 @@
+﻿@model List<string>
+
+@{ 
+    ViewData["Title"] = "News";
+}
+
+<div class="col">
+    @foreach (var item in Model)
+    {
+        <p id="itemNewsArticle"> @item </p>
+    }
+</div>
